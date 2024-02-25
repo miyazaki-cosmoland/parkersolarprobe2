@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Loads <model-viewer> for modern browsers: -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+  </script>
+  <!-- Loads <model-viewer> for old browsers like IE11: -->
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+
+  </script>
+  <title>WebAR for All Browsers</title>
+  <style>
+  h1 {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: greenyellow;
+  }
+  .ar-model {
+    margin: 0 auto;
+    max-width: 600px;
+    height: 400px;
+  }
+  .ar-caption {
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+  }
+  .ar-text {
+    padding: 0 1rem;
+  }
+  #custom-ar-button {
+      font-size: 20px;
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <h1>WebAR SLIM by Model Viewer</h1>
+  <figure class="ar-img">
+    <model-viewer class="ar-model" src="model/slim_3Dmodel.glb" ios-src="model/slim_3Dmodel.usdz" auto-rotate camera-controls 
+      shadow-intensity = 2
+      shadow-softness = 1
+      ar alt="SLIM">
+    <button id="custom-ar-button" slot="ar-button">Start AR</button>
+    </model-viewer>
+    <figcaption class="ar-caption">&copy; Robert Mirabelle</figcaption>
+  </figure>
+  <p class="ar-text">小型月面着陸実証機SLIMの3DmodelはJAXA提供</p>
+</div>
+</body>
+</html>
